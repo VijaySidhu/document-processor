@@ -1,0 +1,77 @@
+{
+  "name": "document-processor",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/main/index.js",
+  "scripts": {
+    "build": "tsc --build && npx webpack --config webpack.config.js",
+    "clean": "npx tsc --build --clean",
+    "dev": "npm run clean && npm t",
+    "installCDK": "npm install -g aws-cdk@1",
+    "lint": "eslint --fix --max-warnings 0 . --ext .ts",
+    "local-synth": "npm run clean && npm run synth --scripts-prepend-node-path --json --region us-east-1 --profile iDoNotExist",
+    "resolve-audit": "npm i --package-lock-only && resolve-audit --registry=https://registry.npmjs.org/ && npm rimraf package-lock.json",
+    "synth": "npm run clean && npm run build && cdk synth --scripts-prepend-node-path --json",
+    "test": "npm run synth && nyc --reporter=lcov --reporter=text-summary --dir coverage/unit jasmine-ts",
+    "updateCDK": "npx npm-check-updates -u && npm install",
+    "watch": "tsc -w"
+  },
+  "author": "Vijay Sidhu",
+  "bin": {
+    "document-processor": "bin/StackInitializer.ts"
+  },
+  "license": "GAC",
+  "engines": {
+    "node": "14.16.0",
+    "npm": "7.15.1"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-dynamodb": "^1.128.0",
+    "@aws-cdk/aws-iam": "^1.128.0",
+    "@aws-cdk/aws-lambda": "^1.128.0",
+    "amazon-textract-response-parser": "^0.1.2",
+    "@aws-cdk/aws-lambda-event-sources": "^1.128.0",
+    "@aws-cdk/core": "^1.128.0",
+    "ts-loader": "^9.2.6",
+    "pino": "7.6.1",
+    "csvtojson": "^2.0.10"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "^1.128.0",
+    "@types/aws-lambda": "^8.10.78",
+    "@types/jasmine": "^3.10.2",
+    "@types/node": "^14.14.1",
+    "eslint-config-google": "^0.14.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "aws-sdk-mock": "^5.1.0",
+    "cdk": "^1.105.0",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "jasmine": "^3.10.0",
+    "jasmine-ts": "^0.3.3",
+    "npm-audit-check": "^1.1.0",
+    "npm-audit-html": "^1.5.0",
+    "npm-audit-resolver": "^2.2.1",
+    "nyc": "^15.1.0",
+    "pre-commit": [
+      "lint",
+      "test"
+    ],
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0",
+    "copy-webpack-plugin": "^10.2.0",
+    "keywords": [
+      "AWS",
+      "CDK",
+      "Bounded",
+      "Context",
+      "TS",
+      "TypeScript"
+    ]
+  }
+}

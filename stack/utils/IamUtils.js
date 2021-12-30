@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IamUtils = void 0;
+const aws_iam_1 = require("@aws-cdk/aws-iam");
+class IamUtils {
+    static createNewIamRole(scope, id, servicePrincipal) {
+        return new aws_iam_1.Role(scope, id, {
+            assumedBy: servicePrincipal
+        });
+    }
+}
+exports.IamUtils = IamUtils;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiSWFtVXRpbHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJJYW1VdGlscy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSw4Q0FBd0Q7QUFHeEQsTUFBYSxRQUFRO0lBRVYsTUFBTSxDQUFDLGdCQUFnQixDQUFDLEtBQWUsRUFDZixFQUFTLEVBQ1QsZ0JBQWlDO1FBQzdELE9BQU8sSUFBSSxjQUFJLENBQUMsS0FBSyxFQUFDLEVBQUUsRUFBQztZQUNwQixTQUFTLEVBQUMsZ0JBQWdCO1NBQzdCLENBQUMsQ0FBQTtJQUNOLENBQUM7Q0FHSjtBQVhELDRCQVdDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtSb2xlLCBTZXJ2aWNlUHJpbmNpcGFsfSBmcm9tIFwiQGF3cy1jZGsvYXdzLWlhbVwiO1xyXG5pbXBvcnQge0NvbnN0cnVjdH0gZnJvbSBcIkBhd3MtY2RrL2NvcmVcIjtcclxuXHJcbmV4cG9ydCBjbGFzcyBJYW1VdGlscyB7XHJcblxyXG4gICAgcHVibGljIHN0YXRpYyBjcmVhdGVOZXdJYW1Sb2xlKHNjb3BlOkNvbnN0cnVjdCxcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpZDpzdHJpbmcsXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc2VydmljZVByaW5jaXBhbDpTZXJ2aWNlUHJpbmNpcGFsKTpSb2xle1xyXG4gICAgICAgcmV0dXJuIG5ldyBSb2xlKHNjb3BlLGlkLHtcclxuICAgICAgICAgICAgYXNzdW1lZEJ5OnNlcnZpY2VQcmluY2lwYWxcclxuICAgICAgICB9KVxyXG4gICAgfVxyXG5cclxuXHJcbn0iXX0=

@@ -1,0 +1,7 @@
+node_modules
+dist
+*.d.ts
+cdk.out/
+bin/StackInitializer.js
+lib/configuration.js
+lib/stack/ApplicationStack.js

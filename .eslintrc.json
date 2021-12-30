@@ -1,0 +1,10 @@
+{
+  "extends": "google",
+  "rules": {
+    "line-comment-position": "off",
+    "no-inline-comments": "off"
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  }
+}
